@@ -21,22 +21,72 @@ and let KalaSetu handle the technical part.
 
 ## How It Works
 
-**1. Take a Photo**  
-The artisan captures a photo of their handmade product.
+KalaSetu is designed to keep the process simple for artisans. 
+The artisan provides a photo of the product and can describe it using their own voice. 
+The system then processes this information and prepares it for digital selling.
 
-**2. Clean the Image**  
-The background is removed to make the product look cleaner and
-more suitable for an online marketplace.
+### 1. Artisan Provides the Input
 
-**3. AI Identifies the Product**  
-The product image is analysed to understand what the main product is.
+The process starts with two simple inputs:
 
-**4. Add Information by Voice**  
-The artisan can speak about their product instead of typing everything.
+- 📸 **Product Photo** — The artisan takes a photo of their handmade product.
+- 🎙️ **Voice Description** — The artisan can describe the product in their local language instead of typing everything manually.
 
-**5. Create a Digital Listing**  
-The collected information can be turned into a product listing that
-can be used for online selling.
+### 2. Cleaning the Product Image
+
+The product photo is processed using **RMBG / BiRefNet** to remove the background.
+
+This gives the product a cleaner image that can be used for online catalogues and product listings.
+
+### 3. Converting Voice into Text
+
+The voice description is processed using the **Bhashini ULCA API**.
+
+The spoken information is converted into text while supporting multiple Indian languages.
+
+### 4. AI Understands the Product
+
+The cleaned image and the transcribed text are then processed using **Llama-3.1**.
+
+The AI can help generate important product information such as:
+
+- Product title
+- Product description
+- Key product attributes
+- Suggested HSN code
+
+The idea is to reduce the amount of manual work an artisan has to do.
+
+### 5. Creating Structured Product Data
+
+The generated information is organised into a standard **JSON format**.
+
+It contains details such as:
+
+- Product title
+- Description
+- Key attributes
+- HSN code
+- Product image URL
+
+Keeping the information in a structured format makes it easier to connect KalaSetu with digital commerce platforms.
+
+### 6. Ready for Digital Selling
+
+The final information can be used to create a standardised product listing for e-commerce and marketplace platforms.
+
+### The Complete Flow
+
+**Product Photo + Voice Description**  
+→ **Image & Voice Processing**  
+→ **Clean Image + Transcribed Text**  
+→ **AI Processing**  
+→ **Structured Product Data**  
+→ **Marketplace-Ready Listing**
+
+### In Simple Words
+
+> **An artisan simply shares a photo and talks about their product in their own language. KalaSetu takes care of the technical work and turns that information into a digital-ready product listing.**
 
 ## Technology
 
